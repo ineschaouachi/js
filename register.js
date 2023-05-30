@@ -4,11 +4,11 @@ boutonValider.addEventListener('click', register);
 
 
 function register() {
-    var firstName = document.getElementById('form2Example1').value;
-    var lastName = document.getElementById('form2Example2').value;
-    var email = document.getElementById('form2Example3').value;
-    var password = document.getElementById('form2Example4').value;
-    var confirmPassword = document.getElementById('form2Example5').value;
+    var firstName = document.getElementById('form2Example1');
+    var lastName = document.getElementById('form2Example2');
+    var email = document.getElementById('form2Example3');
+    var password = document.getElementById('form2Example4');
+    var confirmPassword = document.getElementById('form2Example5');
 
     var divFirstName = document.getElementById('divFirstName');
     var divLastName = document.getElementById('divLastName');
@@ -16,9 +16,10 @@ function register() {
     var divPassword = document.getElementById('divPassword');
     var divConfirmPassword = document.getElementById('divConfirmPassword');
 
-    if (!firstName) {
-        divFirstName.innerHTML = '<b>Le nom est obligatoire.</b>';
-        divFirstName.style.color = 'red';
+    if (!firstName.value) {
+
+        firstName.classList.remove('is-valid');
+        firstName.classList.add('is-invalid');
     }
     else {
         divFirstName.innerHTML = '';
