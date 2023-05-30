@@ -23,9 +23,10 @@
                 <form>
                     <!-- First name input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="form2Example1" class="form-control"
-                            placeholder="Saisissez vote nom ici" />
+                        <input type="text" id="form2Example1" class="form-control" placeholder="Saisissez vote nom ici"
+                            required />
                         <label class="form-label" for="form2Example1">Nom :</label>
+                        <div id="divFirstName"></div>
                     </div>
 
                     <!-- Last name input -->
@@ -33,12 +34,14 @@
                         <input type="text" id="form2Example2" class="form-control"
                             placeholder="Saisissez vote prénom ici" />
                         <label class="form-label" for="form2Example2">Prénom :</label>
+                        <div id="divLastName"></div>
                     </div>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="email" id="form2Example3" class="form-control"
                             placeholder="Saisissez vote e-mail ici" />
                         <label class="form-label" for="form2Example3">E-mail :</label>
+                        <div id="divEmail"></div>
                     </div>
 
                     <!-- Password input -->
@@ -46,28 +49,25 @@
                         <input type="password" id="form2Example4" class="form-control"
                             placeholder="Saisissez vote mot de passe ici" />
                         <label class="form-label" for="form2Example4">Mot de passe :</label>
+                        <div id="divPassword"></div>
                     </div>
                     <!-- Confirm password input -->
                     <div class="form-outline mb-4">
                         <input type="password" id="form2Example5" class="form-control"
                             placeholder="Saisissez vote mot de passe ici" />
                         <label class="form-label" for="form2Example5">Confirmation mot de passe :</label>
+                        <div id="divConfirmPassword"></div>
                     </div>
                     <!-- Submit button -->
                     <button type="button" class="btn btn-success btn-block mb-4">S'inscrire</button>
                     <!-- 2 column grid layout for inline styling -->
-                    <div class="row mb-4">
-                        <div class="col-lg-12 text-center">
-                            <!-- Simple link -->
-                            <a href="#!">S'inscrire</a>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>
     </div>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"></script>
+    <script src='register.js'></script>
 </body>
 
 </html>
