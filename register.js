@@ -56,7 +56,7 @@ function register(e) {
         confirmPassword.classList.remove('is-invalid');
         confirmPassword.classList.add('is-valid');
     }
-    const local = JSON.parse(localStorage.getItem("user"));
+
     const user = {
         nom: nom.value,
         prenom: prenom.value,
@@ -65,7 +65,9 @@ function register(e) {
         confirmPassword: confirmPassword.value
     };
     if (local != null) {
+        var local = JSON.parse(localStorage.getItem("user"));
         localStorage.setItem("user", JSON.stringify(user));
+        local.push('user');
         window.location.href = 'login.html';
 
     }

@@ -26,10 +26,17 @@ function register(e) {
         password.classList.remove('is-invalid');
         password.classList.add('is-valid');
     }
-    const local = JSON.parse(localStorage.getItem("user"));
+
     const user = {
         email: email.value,
         password: password.value
 
     };
+    if (local != null) {
+        var local = JSON.parse(localStorage.getItem("user"));
+        localStorage.setItem("user", JSON.stringify(user));
+        local.push('user');
+        window.location.href = 'dashbord.html';
+
+    }
 }
