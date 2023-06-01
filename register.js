@@ -27,29 +27,35 @@ function register() {
 
     }
     else {
-        firstName.classList.remove('is-invalid');
-        firstName.classList.add('is-valid');
+        lastName.classList.remove('is-invalid');
+        lastName.classList.add('is-valid');
     }
     if ((!email.value) || (!email.value.includes('@'))) {
-        divEmail.innerHTML = '<b>L\'adresse est obligatoire ou invalide.</b>';
-        divEmail.style.color = 'red';
+        email.classList.remove('is-valid');
+        email.classList.add('is-invalid');
+
     }
     else {
-        divEmail.innerHTML = '';
+        email.classList.remove('is-invalid');
+        email.classList.add('is-valid');
     }
     if (!password.value) {
-        divPassword.innerHTML = '<b>Le mot de passe est obligatoire.</b>';
-        divPassword.style.color = 'red';
+        password.classList.remove('is-valid');
+        password.classList.add('is-invalid');
+
     }
     else {
-        divPassword.innerHTML = '';
+        password.classList.remove('is-invalid');
+        password.classList.add('is-valid');
     }
     if ((!confirmPassword.value) || (confirmPassword.value != password.value)) {
-        divConfirmPassword.innerHTML = '<b>La confirmation est obligatoire ou bien la confirmation est invalide.</b>';
-        divConfirmPassword.style.color = 'red';
+        confirmPassword.classList.remove('is-valid');
+        confirmPassword.classList.add('is-invalid');
+
     }
     else {
-        divConfirmPassword.innerHTML = '';
+        confirmPassword.classList.remove('is-invalid');
+        confirmPassword.classList.add('is-valid');
     }
 
     //alert(firstName);
