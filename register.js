@@ -10,11 +10,7 @@ function register() {
     var password = document.getElementById('form2Example4');
     var confirmPassword = document.getElementById('form2Example5');
 
-    var divFirstName = document.getElementById('divFirstName');
-    var divLastName = document.getElementById('divLastName');
-    var divEmail = document.getElementById('divEmail');
-    var divPassword = document.getElementById('divPassword');
-    var divConfirmPassword = document.getElementById('divConfirmPassword');
+
 
     if (!firstName.value) {
 
@@ -22,30 +18,33 @@ function register() {
         firstName.classList.add('is-invalid');
     }
     else {
-        divFirstName.innerHTML = '';
+        firstName.classList.remove('is-invalid')
+        firstName.classList.add('is-valid')
     }
-    if (!lastName) {
-        divLastName.innerHTML = '<b>Le prénom est obligatoire.</b>';
-        divLastName.style.color = 'red';
+    if (!lastName.value) {
+        lastName.classList.remove('is-valid');
+        lastName.classList.add('is-invalid');
+
     }
     else {
-        divLastName.innerHTML = '';
+        firstName.classList.remove('is-invalid');
+        firstName.classList.add('is-valid');
     }
-    if ((!email) || (!email.includes('@'))) {
+    if ((!email.value) || (!email.value.includes('@'))) {
         divEmail.innerHTML = '<b>L\'adresse est obligatoire ou invalide.</b>';
         divEmail.style.color = 'red';
     }
     else {
         divEmail.innerHTML = '';
     }
-    if (!password) {
+    if (!password.value) {
         divPassword.innerHTML = '<b>Le mot de passe est obligatoire.</b>';
         divPassword.style.color = 'red';
     }
     else {
         divPassword.innerHTML = '';
     }
-    if ((!confirmPassword) || (confirmPassword != password)) {
+    if ((!confirmPassword.value) || (confirmPassword.value != password.value)) {
         divConfirmPassword.innerHTML = '<b>La confirmation est obligatoire ou bien la confirmation est invalide.</b>';
         divConfirmPassword.style.color = 'red';
     }
