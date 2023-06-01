@@ -26,4 +26,10 @@ function register(e) {
         password.classList.remove('is-invalid');
         password.classList.add('is-valid');
     }
+    const local = JSON.parse(localStorage.getItem("user"));
+    const user = {
+        email: email.value,
+        password: password.value
+
+    };
 }
