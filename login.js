@@ -8,6 +8,7 @@ function register(e) {
     var email = document.getElementById('form2Example1');
     var password = document.getElementById('form2Example2');
 
+
     if ((!email.value) || (!email.value.includes('@'))) {
         email.classList.remove('is-valid');
         email.classList.add('is-invalid');
@@ -27,16 +28,21 @@ function register(e) {
         password.classList.add('is-valid');
     }
 
-    const user = {
+    var user = {
         email: email.value,
         password: password.value
 
     };
-    if (local != null) {
-        var local = JSON.parse(localStorage.getItem("user"));
-        localStorage.setItem("user", JSON.stringify(user));
-        local.push('user');
-        window.location.href = 'dashbord.html';
 
+    var users = JSON.parse(localStorage.getItem('user')) || []
+
+    var userFound = users.find((user) => user.email === email.value && user.password === password.value)
+    console.log(userFound);
+
+    if (userFound == undefined) {
+        alert('verify your email or password');
+    } else {
+
+        window.location.href = 'dashbord.html';
     }
 }
