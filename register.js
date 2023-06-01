@@ -3,14 +3,13 @@ boutonValider.addEventListener('click', register);
 
 
 
-function register() {
-    var firstName = document.getElementById('form2Example1');
-    var lastName = document.getElementById('form2Example2');
-    var email = document.getElementById('form2Example3');
-    var password = document.getElementById('form2Example4');
-    var confirmPassword = document.getElementById('form2Example5');
-
-
+function register(e) {
+    e.preventDefault;
+    var firstName = document.getElementById('nom');
+    var lastName = document.getElementById('prenom');
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
+    var confirmPassword = document.getElementById('confirmPassword');
 
     if (!firstName.value) {
 
@@ -57,6 +56,21 @@ function register() {
         confirmPassword.classList.remove('is-invalid');
         confirmPassword.classList.add('is-valid');
     }
+    const local = JSON.parse(localStorage.getItem("user"));
+    const user = {
+        nom: nom.value,
+        prenom: prenom.value,
+        email: email.value,
+        password: password.value,
+        confirmPassword: confirmPassword.value
+    };
+    if (local != null) {
+        localStorage.setItem("user", JSON.stringify(user));
+        window.location.href = 'login.html';
 
-    //alert(firstName);
+    }
+
 }
+
+
+
