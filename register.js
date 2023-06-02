@@ -4,7 +4,7 @@ boutonValider.addEventListener('click', register);
 
 
 function register(e) {
-    e.preventDefault;
+    e.preventDefault();
     var firstName = document.getElementById('nom');
     var lastName = document.getElementById('prenom');
     var email = document.getElementById('email');
